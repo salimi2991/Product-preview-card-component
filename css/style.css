@@ -44,19 +44,9 @@ body {
 }
 
 img,
-picture,
-video,
-canvas,
-svg {
+picture {
   display: block;
   max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
 }
 
 p,
@@ -140,6 +130,7 @@ main {
   background-color: var(--clr-dark-cyan);
   color: var(--clr-white);
   font-weight: var(--fw-bold);
+  font: inherit;
   padding: 1.6rem 3rem;
   width: 100%;
   cursor: pointer;
