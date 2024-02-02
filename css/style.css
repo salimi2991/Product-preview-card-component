@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+/* Reset and Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-dark-cyan: hsl(158, 36%, 37%);
+  --clr-cream: hsl(30, 38%, 92%);
+  --clr-very-dark-blue: hsl(212, 21%, 14%);
+  --clr-dark-grayish-blue: hsl(228, 12%, 48%);
+  --clr-white: hsl(0, 0%, 100%);
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-sacendry: "Fraunces", serif;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fs-noraml: 1.4rem;
+}
+
+/* Typography and Basic Styles */
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-noraml);
+  font-weight: var(--fw-medium);
+  line-height: 1.5;
+  background-color: var(--clr-cream);
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  place-content: center;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Main Styles */
+main {
+  padding-inline: 1.6rem;
+}
+
+.product__card {
+  display: grid;
+  background-color: var(--clr-white);
+  border-radius: 1rem;
+  max-width: 60rem;
+}
+
+.product__card .product__img img {
+  height: 100%;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.product__card .product__content {
+  padding: 2.7rem 2.5rem;
+}
+
+.product__card .product__content .product__category {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  margin-bottom: 1.9rem;
+  color: var(--clr-dark-grayish-blue);
+  font-size: 1.3rem;
+}
+
+.product__card .product__content .product__title {
+  font-family: var(--ff-sacendry);
+  font-size: 3.2rem;
+  line-height: 1;
+  margin-bottom: 2.5rem;
+}
+
+.product__card .product__content p {
+  margin-bottom: 3.4rem;
+  color: var(--clr-dark-grayish-blue);
+  line-height: 1.8;
+}
+
+.product__card .product__content .product__prices {
+  margin-bottom: 2.3rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.product__card .product__content .product__prices .product__new-price {
+  font-family: var(--ff-sacendry);
+  font-size: 3rem;
+  color: var(--clr-dark-cyan);
+}
+
+.product__card .product__content .product__prices .product__old-price {
+  color: var(--clr-dark-grayish-blue);
+}
+
+.product__card .product__content .btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  background-color: var(--clr-dark-cyan);
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
+  padding: 1.6rem 3rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.product__card .product__content .btn::before {
+  content: "";
+  background-image: url(../images/icon-cart.svg);
+  width: 1.5rem;
+  height: 1.6rem;
+}
+
+.product__card .product__content .btn:is(:focus, :hover) {
+  background-color: #1a4031;
+}
+
+/* Responsive Styles */
+
+@media (min-width: 600px) {
+  .product__card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product__card .product__img img {
+    border-radius: 1rem 0 0 1rem;
+  }
+
+  .product__card .product__content {
+    padding: 3.5rem 3.2rem;
+  }
+}
